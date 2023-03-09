@@ -4,40 +4,59 @@
 }
 
 .testimonials {
-  height: cR(500px);
+  // height: cR(580px);
+  // height: min-content;
   display: grid;
   grid-template-columns: repeat(4, minmax(min-content, cR(250px)));
   grid-template-rows: repeat(2, 1fr);
-  gap: cR(10px);
+  gap: cR(15px);
   justify-content: center;
   align-self: center;
 }
 
 .testimonial {
-  background-color: orangered;
   padding: cR(25px);
   display: grid;
   border-radius: cR(10px);
+  box-shadow: 0 cR(5px) cR(20px) rgba(0, 0, 0, 0.1);
+  align-items: flex-start;
 
   &__1 {
     background-color: var(--moderate-violet);
     color: #fff;
     grid-row: 1 / span 1;
     grid-column: 1 / span 2;
+    position: relative;
+
+    &::before {
+      content: "\201C";
+      position: absolute;
+      font-family: sans-serif;
+      font-size: cR(480px);
+      top: cR(-130px);
+      left: cR(300px);
+      opacity: 40%;
+    }
   }
   &__2 {
+    background-color: var(--very-dark-grayish-blue);
+    color: #fff;
     grid-row: 1 / span 1;
     grid-column: 3 / span 1;
   }
   &__3 {
+    background-color: var(--white);
     grid-row: 1 / span 2;
     grid-column: 4 / span 1;
   }
   &__4 {
+    background-color: var(--white);
     grid-row: 2 / span 1;
     grid-column: 1 / span 1;
   }
   &__5 {
+    background-color: var(--very-dark-blackish-blue);
+    color: #fff;
     grid-row: 2 / span 1;
     grid-column: 2 / span 2;
   }
@@ -55,6 +74,10 @@
     display: block;
     border: 1.5px solid #fff;
     border-radius: 50%;
+
+    &--patrick {
+      border: 1.5px solid var(--moderate-violet);
+    }
   }
 
   &__details {
